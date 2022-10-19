@@ -6,7 +6,7 @@
 /*   By: yelaissa <yelaissa@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 10:52:04 by yelaissa          #+#    #+#             */
-/*   Updated: 2022/10/18 19:40:52 by yelaissa         ###   ########.fr       */
+/*   Updated: 2022/10/19 10:16:08 by yelaissa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,12 @@ int	formatspecs(va_list ap, char format)
 		size = ft_putstr(va_arg(ap, char *));
 	else if (format == 'd' || format == 'i')
 		size = ft_put_itoa(va_arg(ap, int));
-	else if (format == 'x' || format == 'X')
-		size = ft_put_ntoh(va_arg(ap, int), format);
 	else if (format == 'u')
 		size = ft_put_uitoa(va_arg(ap, int));
+	else if (format == 'x' || format == 'X')
+		size = ft_put_hexa(va_arg(ap, int), format);
 	else if (format == 'p')
-	{
-		size += ft_putstr("0x");
-		if (va_arg(ap, unsigned long long int) == 0)
-			size += ft_putchar('0');
-		else
-			size += ft_put_ntop(va_arg(ap, unsigned long long int));
-	}
+		size += ft_put_pointer(va_arg(ap, unsigned long long int));
 	return (size);
 }
 
@@ -66,27 +60,27 @@ int	ft_printf(const char *s, ...)
 	return (printed);
 }
 
-int main(void)
+/* int main(void)
 {
 	int a = 0;
 	int b = 0;
 	a += printf("%c \n", 'a');
 	a += printf("%s \n", "abc");
-	a += printf("%p \n", (void *)42);
+	a += printf("%p \n", &a);
 	a += printf("%d %i \n", 42, 42);
 	a += printf("%u \n", 42);
 	a += printf("%x %X \n", 42, 42);
 	a += printf("%% \n");
-
+	ft_printf("######################dyalom^\n");
 	b += ft_printf("%c \n", 'a');
 	b += ft_printf("%s \n", "abc");
-	b += ft_printf("%p \n", (void *)42);
+	b += ft_printf("%p \n", &a);
 	b += ft_printf("%d %i \n", 42, 42);
 	b += ft_printf("%u \n", 42);
 	b += ft_printf("%x %X \n", 42, 42);
 	b += ft_printf("%% \n");
 
+	ft_printf("\nLength : \n%d\n%d\n", a, b);
 
-	ft_printf("%d\n%d\n", a, b);
 	return 0;
-}
+} */

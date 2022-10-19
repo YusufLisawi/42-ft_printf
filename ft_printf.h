@@ -6,7 +6,7 @@
 /*   By: yelaissa <yelaissa@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 10:25:35 by yelaissa          #+#    #+#             */
-/*   Updated: 2022/10/18 19:27:07 by yelaissa         ###   ########.fr       */
+/*   Updated: 2022/10/19 10:27:35 by yelaissa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <unistd.h>
 # include <limits.h>
 
-# include "utils/utils.h"
+# include "ft_printf_utils/utils.h"
 
-int ft_printf(const char *s, ...);
+int	ft_printf(const char *s, ...);
 
 #endif

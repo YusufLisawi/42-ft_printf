@@ -6,11 +6,12 @@
 /*   By: yelaissa <yelaissa@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:20:40 by yelaissa          #+#    #+#             */
-/*   Updated: 2022/10/18 19:28:50 by yelaissa         ###   ########.fr       */
+/*   Updated: 2022/10/18 19:49:01 by yelaissa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 /* int	sum(int num, ...)
 {
@@ -29,6 +30,14 @@
 	return (sum);
 } */
 
+// int main()
+// {
+// 	int x = printf("%lx", 2512354231);
+// 	printf("\n%d\n", x);
+// 	int d = ft_putnbr_base(2512354231, "0123456789abcdef");
+// 	printf("\n%d\n", d);
+// }
+
 /* int	main(void)
 {
 	// printf("%d\n", sum(5, 1, 2, 3, 4, 5));
@@ -40,8 +49,6 @@
 	printf("%p\n", b);
 	printf("%X\n", b);
 } */
-
-#include <stdio.h>
 
 // int main(void)
 // {

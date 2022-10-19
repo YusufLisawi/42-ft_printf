@@ -1,12 +1,13 @@
 NAME	= libftprintf.a
 
 SRCS	= ft_printf.c \
-			utils/ft_basenblen.c \
-			utils/ft_putchar.c \
-			utils/ft_putstr.c \
-			utils/ft_putnbr.c \
-			utils/ft_putnbr_base.c \
-			utils/ft_puthexa.c \
+			ft_printf_utils/ft_basenblen.c \
+			ft_printf_utils/ft_putchar.c \
+			ft_printf_utils/ft_putstr.c \
+			ft_printf_utils/ft_putnbr.c \
+			ft_printf_utils/ft_putnbr_base.c \
+			ft_printf_utils/ft_puthexa.c \
+			ft_printf_utils/ft_strlen.c \
 
 OBJS	= $(SRCS:c=o)
 
@@ -17,7 +18,7 @@ CC		= gcc
 RM		= rm -f
 
 
-%.o		:		%.c
+%.o		:	%.c
 			$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME) :	$(OBJS)
@@ -25,7 +26,8 @@ $(NAME) :	$(OBJS)
 
 all		:	$(NAME)
 
-clean	:	$(RM) $(OBJS)
+clean	:
+			$(RM) $(OBJS)
 
 fclean	:	clean
 			$(RM) $(NAME)
